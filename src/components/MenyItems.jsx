@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
-function MenyItems({ input }) {
+function MenyItems({ searchInput, cat }) {
   const { data, loading, error } = useFetch("http://localhost:3000/menu");
   const [sortedMenu, setSortedMenu] = useState([]);
 
   useEffect(() => {
     if (!data) return;
-    if (input) {
+    if (searchInput || cat) {
       const filteredMenu = data.filter(
         (d) =>
-          d.title.toLowerCase().includes(input.toLowerCase()) ||
-          d.category.toLowerCase().includes(input.toLowerCase())
+          d.title.toLowerCase().includes(searchInput.toLowerCase() || cat) ||
+          d.category.toLowerCase().includes(searchInput.toLowerCase() || cat)
       );
       setSortedMenu(filteredMenu);
     } else {
       setSortedMenu(data);
     }
-  }, [input, data]);
+  }, [searchInput, cat, data]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;

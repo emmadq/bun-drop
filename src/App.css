@@ -6,10 +6,10 @@
 
 body {
   min-height: 100vh;
-  overflow-x: hidden;
   font-family: "Inter", sans-serif; /* Se till att fonten appliceras på body */
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 a {
@@ -26,7 +26,6 @@ a {
 
 .Navbar-container {
   height: 150px;
-  width: 100vw;
   max-width: 1920px;
   display: flex;
   justify-content: space-between;
@@ -153,14 +152,20 @@ a {
 }
 
 .categories {
+  width: 70vw;
+  max-width: 1020px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 150px;
 }
+
 .cat-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 20px;
+  margin-top: 20px;
   font-size: 1.3rem;
 }
 
@@ -168,11 +173,14 @@ a {
   width: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.cat-cont img:hover {
+.cat-cont.active img {
   width: 150px;
   border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
   border: #ffb191 solid 7px;
 }
 
@@ -193,6 +201,7 @@ a {
   justify-content: center;
   margin: 30px 10px;
   border: transparent;
+  cursor: pointer;
 }
 
 .menu-items div :hover {

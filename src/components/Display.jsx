@@ -6,10 +6,12 @@ import Searchbar from "./Seachbar";
 
 function Display() {
   const [searchInput, setSearchInput] = useState("");
+  const [catSearch, setCat] = useState("");
 
   const handleInputChange = (input) => {
     setSearchInput(input);
   };
+
   return (
     <div className="display-container">
       <div className="header">
@@ -22,8 +24,8 @@ function Display() {
         </div>
       </div>
       <Searchbar onSearch={handleInputChange}></Searchbar>
-      <CategoryCircle></CategoryCircle>
-      <MenyItems input={searchInput}></MenyItems>
+      <CategoryCircle catSearch={catSearch} setCat={setCat}></CategoryCircle>
+      <MenyItems searchInput={searchInput} cat={catSearch}></MenyItems>
     </div>
   );
 }
