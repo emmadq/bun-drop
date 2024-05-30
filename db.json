@@ -1,0 +1,244 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "title": "BBQ Burger",
+      "price": 9.99,
+      "description": "A juicy beef burger with BBQ sauce, onions, cheddar cheese, and crispy bacon.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/baconbbq.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Banana Milkshake",
+      "price": 4.5,
+      "description": "A creamy banana milkshake topped with whipped cream.",
+      "category": "milkshakes",
+      "image": "/src/assets/bun drop images/bananmilk.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Cheeseburger",
+      "price": 8.99,
+      "description": "A classic cheeseburger with melted American cheese, lettuce, and tomato.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/cheeseburger2.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Double Cheeseburger",
+      "price": 11.99,
+      "description": "Two beef patties with double cheese, lettuce, tomato, and pickles.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/dubbel.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Unicorn Burger",
+      "price": 12.99,
+      "description": "A magical burger with rainbow-colored bun, beef patty, and colorful toppings.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/enhorning.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Sprinkle Burger",
+      "price": 10.99,
+      "description": "A fun burger with a beef patty, cheese, and sprinkles on the bun.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/festive.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Buffalo Wings",
+      "price": 7.99,
+      "description": "Spicy buffalo wings served with blue cheese dip.",
+      "category": "sides",
+      "image": "/src/assets/bun drop images/buffalo.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Coca Cola",
+      "price": 1.99,
+      "description": "Chilled and refreshing Coca Cola.",
+      "category": "beverages",
+      "image": "/src/assets/bun drop images/cola.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Ginger Ale",
+      "price": 1.99,
+      "description": "A refreshing ginger ale with a hint of spice.",
+      "category": "beverages",
+      "image": "/src/assets/bun drop images/ginger.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Small Salad",
+      "price": 3.99,
+      "description": "A fresh side salad with mixed greens, cherry tomatoes, and cucumber.",
+      "category": "sides",
+      "image": "/src/assets/bun drop images/minisalad.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Fruit Cocktail Dessert",
+      "price": 5.99,
+      "description": "A refreshing fruit cocktail with a variety of fresh fruits.",
+      "category": "desserts",
+      "image": "/src/assets/bun drop images/fruktdesert.jpg"
+    },
+    {
+      "id": 12,
+      "title": "IceCream Bomb",
+      "price": 6.99,
+      "description": "A decadent dessert with multiple scoops of ice cream and chocolate sauce.",
+      "category": "desserts",
+      "image": "/src/assets/bun drop images/glassbomb.jpg"
+    },
+    {
+      "id": 13,
+      "title": "White Wine",
+      "price": 7.99,
+      "description": "A glass of crisp and refreshing white wine.",
+      "category": "beverages",
+      "image": "/src/assets/bun drop images/glasvin.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Chocolate Milkshake",
+      "price": 4.5,
+      "description": "A rich chocolate milkshake topped with whipped cream.",
+      "category": "milkshakes",
+      "image": "/src/assets/bun drop images/milkchocklad.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Mini Cake",
+      "price": 5.99,
+      "description": "A light sponge cake with fresh berries and cream.",
+      "category": "desserts",
+      "image": "/src/assets/bun drop images/minicake.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Monster Burger",
+      "price": 14.99,
+      "description": "A monsterus looking burger with a beef and veggie patty, blue cheese, red cabbage, and all the fixings.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/monster.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Rainbow Pancakes",
+      "price": 8.99,
+      "description": "Stack of colorful pancakes served with syrup and whipped cream.",
+      "category": "desserts",
+      "image": "/src/assets/bun drop images/pannkakscake.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Fries",
+      "price": 2.99,
+      "description": "Crispy golden fries served with ketchup.",
+      "category": "sides",
+      "image": "/src/assets/bun drop images/pommes.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Luxurious Fries",
+      "price": 5.99,
+      "description": "Fries topped with truffle oil, parmesan, and herbs.",
+      "category": "sides",
+      "image": "/src/assets/bun drop images/pommesbox.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Chicken Salad",
+      "price": 9.99,
+      "description": "Grilled chicken breast on a bed of mixed greens, with cherry tomatoes and vinaigrette.",
+      "category": "salads",
+      "image": "/src/assets/bun drop images/sallad.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Taco Salad",
+      "price": 8.99,
+      "description": "A salad with seasoned beef, lettuce, tomatoes, cheese, and tortilla chips.",
+      "category": "salads",
+      "image": "/src/assets/bun drop images/tacosallad.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Hamburger Salad",
+      "price": 7.99,
+      "description": "A deconstructed burger with beef patty, lettuce, tomatoes, and pickles.",
+      "category": "salads",
+      "image": "/src/assets/bun drop images/hamburgarsallad2.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Ultra Burger",
+      "price": 15.99,
+      "description": "An extravagant burger with 4 beef patties, cheese, lettuce, tomatoes and dressing.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/ultra deluxe.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Strawberry Milkshake",
+      "price": 4.5,
+      "description": "A creamy straweberry milkshake topped with whipped cream and sprinkles.",
+      "category": "milkshakes",
+      "image": "/src/assets/bun drop images/jordgubbsmilk.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Cactus Cooler",
+      "price": 1.99,
+      "description": "Chilled and refreshing cactus flavored soda.",
+      "category": "beverages",
+      "image": "/src/assets/bun drop images/sodagreen.png"
+    },
+    {
+      "id": 26,
+      "title": "Tomato Burger",
+      "price": 1.99,
+      "description": "A burger with tomato buns and filled with fries.",
+      "category": "burgers",
+      "image": "/src/assets/bun drop images/tomatburgare2.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Burgers",
+      "image": "/src/assets/bun drop images/cheeseburger2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Salads",
+      "image": "/src/assets/bun drop images/sallad.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sides",
+      "image": "/src/assets/bun drop images/pommes2.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Beverages",
+      "image": "/src/assets/bun drop images/ginger.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Milkshakes",
+      "image": "/src/assets/bun drop images/bananmilk.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Desserts",
+      "image": "/src/assets/bun drop images/minicake.jpg"
+    }
+  ]
+}
