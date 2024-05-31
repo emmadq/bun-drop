@@ -1,22 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LogoC from "../assets/bun drop images/logo-color.png";
 
 const Navbar = () => {
-  const meny = [];
+  const [clicked, setClicked] = useState("");
 
-  fetch("http://localhost:3000/menu")
-    .then((resp) => resp.json())
-    .then((data) => meny.push(data));
+  useEffect(() => {
+    const storedClicked = localStorage.getItem("clicked");
+    if (storedClicked) {
+      setClicked(storedClicked);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("clicked", clicked);
+  }, [clicked]);
 
   return (
     <div className="Navbar-container">
-      <div className="logo-cont">
+      <a
+        onClick={() => setClicked("")}
+        className="logo-cont link-cont"
+        href="/"
+      >
         <img src={LogoC} alt="" />
         <h2>Bun Drop</h2>
-      </div>
+      </a>
       <div className="link-cont">
-        <a href="">Meny</a>
-        <a href="">Order</a>
+        <a
+          onClick={() => setClicked("menu")}
+          className={clicked === "menu" ? "active" : ""}
+          href="/menu"
+        >
+          Menu
+        </a>
+        <a
+          onClick={() => setClicked("order")}
+          className={clicked === "order" ? "active" : ""}
+          href="/order"
+        >
+          Order
+        </a>
         <button>Login</button>
       </div>
     </div>

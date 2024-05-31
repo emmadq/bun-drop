@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   font-family: "Inter", sans-serif; /* Se till att fonten appliceras på body */
+  color: #444;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -26,6 +27,7 @@ a {
 
 .Navbar-container {
   height: 150px;
+  width: 100vw;
   max-width: 1920px;
   display: flex;
   justify-content: space-between;
@@ -54,18 +56,37 @@ a {
   margin-right: 40px;
   display: flex;
   align-items: center;
-}
-
-.link-cont a {
   text-decoration: none;
   color: inherit;
   font-family: "Just Me Again Down Here", cursive;
   font-size: 3rem;
+}
+
+.link-cont a {
   margin-left: 40px;
+  color: #444;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-cont a:hover {
+  color: #ffb191 !important;
+}
+
+.link-cont:hover {
+  color: inherit !important;
+}
+
+.link-cont .active {
+  color: #444;
+  border-bottom: 5px solid #ffb191;
 }
 
 .link-cont button {
   height: 70px;
+  width: 150px;
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -74,6 +95,22 @@ a {
   margin-left: 40px;
   border: 5px solid #ffb191;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-cont button:hover {
+  background-color: #ffb191;
+  color: #efefef;
+  border: none;
+}
+
+.link-cont button:focus {
+  background-color: #ffb191;
+  color: #efefef;
+  border: none;
+  outline: none;
 }
 
 .footer-container {
@@ -321,12 +358,16 @@ a {
   width: 500px;
   height: 900px;
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 40px;
+  overflow: hidden;
 }
 
 .burger-modal:hover {
@@ -352,7 +393,7 @@ a {
 
 #burger-modal-img {
   position: relative;
-  width: 100%;
+  width: 101%;
   border-radius: 40px;
 }
 
@@ -445,6 +486,9 @@ a {
 }
 
 .burger-modal-btn-cont button:hover {
-  border: #efefef solid 3px;
+  border: #efefef solid px;
   transition: border 0.1s ease;
+}
+
+.menu {
 }
