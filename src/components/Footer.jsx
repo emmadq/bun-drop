@@ -3,16 +3,16 @@ import React from "react";
 function Footer() {
   return (
     <div className="footer-container">
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-section about">
+      <div className="footer-container">
+        <div className="footer-content">
+          <div className="footer-section about">
             <h3>About Us</h3>
             <p>
               We are a team dedicated to providing the best quality products and
               services to our customers.
             </p>
           </div>
-          <div class="footer-section links">
+          <div className="footer-section links">
             <h3>Quick Links</h3>
             <ul>
               <li>
@@ -29,11 +29,11 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div class="footer-section contact">
+          <div className="footer-section contact">
             <h3>Contact Us</h3>
             <p>Email: info@bundrop.com</p>
             <p>Phone: +123 456 7890</p>
-            <div class="socials">
+            <div className="socials">
               <a href="#">
                 <img
                   id="facebook"
@@ -50,7 +50,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div class="footer-bottom">2024 BunDrop. All rights reserved.</div>
+        <div className="footer-bottom">2024 BunDrop. All rights reserved.</div>
       </div>
     </div>
   );

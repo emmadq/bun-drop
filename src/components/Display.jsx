@@ -1,15 +1,28 @@
 import React, { useState } from "react";
-import bild from "../assets/bun drop images/bg1.jpg";
 import CategoryCircle from "./CategoryCircle";
 import MenyItems from "./MenyItems";
 import Searchbar from "./Seachbar";
+import BurgerModal from "./BurgerModal";
 
 function Display() {
   const [searchInput, setSearchInput] = useState("");
   const [catSearch, setCat] = useState("");
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const handleInputChange = (input) => {
     setSearchInput(input);
+  };
+
+  const handleSelectedItem = (item) => {
+    setSelectedItem(item);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+  };
+
+  const handleAddToCart = (item, quantity) => {
+    console.log(`Added ${quantity} of ${item.title} to cart.`);
   };
 
   return (
@@ -25,7 +38,16 @@ function Display() {
       </div>
       <Searchbar onSearch={handleInputChange}></Searchbar>
       <CategoryCircle catSearch={catSearch} setCat={setCat}></CategoryCircle>
-      <MenyItems searchInput={searchInput} cat={catSearch}></MenyItems>
+      <MenyItems
+        searchInput={searchInput}
+        cat={catSearch}
+        setSelectedItem={handleSelectedItem}
+      ></MenyItems>
+      <BurgerModal
+        item={selectedItem}
+        onClose={handleCloseModal}
+        onAddToCart={handleAddToCart}
+      ></BurgerModal>
     </div>
   );
 }

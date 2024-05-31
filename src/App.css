@@ -262,6 +262,8 @@ a {
 }
 
 .menu-items {
+  position: relative;
+
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -312,4 +314,137 @@ a {
 
 .menu-cont h5:first-of-type {
   margin-top: 15px;
+}
+
+.burger-modal {
+  background-color: #e56a38;
+  width: 500px;
+  height: 900px;
+  position: fixed;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 40px;
+}
+
+.burger-modal:hover {
+  border: none !important;
+  transition: none !important;
+}
+
+.burger-modal-header button {
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  left: 380px;
+  background-color: rgb(229, 106, 56, 0);
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+}
+
+.burger-modal-header button:active {
+  outline: none;
+}
+
+#burger-modal-img {
+  position: relative;
+  width: 100%;
+  border-radius: 40px;
+}
+
+.burger-modal-info-cont {
+  margin-top: 40px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  color: #efefef;
+}
+
+.burger-modal-info-cont h1:first-of-type {
+  font-size: 2.3rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.burger-modal-info-cont h1 {
+  font-size: 2rem;
+  font-weight: 320;
+  margin-bottom: 20px;
+}
+
+.burger-modal-info-cont h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.burger-modal-btn-cont {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 80px;
+  margin-top: 20px;
+  height: 55px;
+}
+
+.burger-modal-btn-cont div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #efefef;
+  margin-right: 50px;
+}
+
+.burger-modal-btn-cont div button {
+  background-image: url("/src/assets/icons/increse.svg");
+  background-size: 56px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+.burger-modal-btn-cont div button:first-of-type {
+  background-image: url("/src/assets/icons/decrese.svg");
+  background-size: 56px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+.burger-modal-btn-cont div button {
+  border: none;
+  outline: none;
+}
+
+.burger-modal-btn-cont div h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  width: 50px;
+  text-align: center;
+}
+
+.burger-modal-btn-cont button {
+  background: #ffb191;
+  width: 200px;
+  height: 55;
+  color: #efefef;
+  font-weight: 400;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-modal-btn-cont button:hover {
+  border: #efefef solid 3px;
+  transition: border 0.1s ease;
 }
