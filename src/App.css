@@ -87,6 +87,7 @@ a {
 .link-cont button {
   height: 70px;
   width: 150px;
+  padding: 10px;
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -101,16 +102,25 @@ a {
 }
 
 .link-cont button:hover {
-  background-color: #ffb191;
-  color: #efefef;
-  border: none;
+  color: #e56a38;
+  border: #ffb191 solid 5px;
 }
 
-.link-cont button:focus {
+.link-cont button:active {
   background-color: #ffb191;
   color: #efefef;
   border: none;
   outline: none;
+}
+
+.link-cont button:focus {
+  outline: none;
+  border: 5px solid #ffb191;
+  color: #e56a38;
+}
+
+.link-cont button.logout {
+  background-color: #ffb191;
 }
 
 .footer-container {
@@ -192,6 +202,14 @@ a {
   border-top: 1px solid #444;
   padding-top: 10px;
   font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.login-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .display-container {
@@ -208,6 +226,7 @@ a {
   background-image: url("/src/assets/bun drop images/bg1.jpg");
   background-size: cover;
   background-position: center;
+  pointer-events: none;
 
   display: flex;
   align-items: center;
@@ -247,6 +266,7 @@ a {
   font-family: "Just Me Again Down Here", cursive;
   font-size: 3rem;
   margin-top: 50px;
+  pointer-events: none;
 }
 
 .searchbar input {
@@ -403,6 +423,7 @@ a {
   display: flex;
   flex-direction: column;
   color: #efefef;
+  pointer-events: none;
 }
 
 .burger-modal-info-cont h1:first-of-type {
@@ -442,17 +463,19 @@ a {
 
 .burger-modal-btn-cont div button {
   background-image: url("/src/assets/icons/increse.svg");
-  background-size: 56px;
+  background-size: 57px;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
   width: 55px;
   height: 55px;
+  border: none;
+  outline: none;
 }
 
 .burger-modal-btn-cont div button:first-of-type {
   background-image: url("/src/assets/icons/decrese.svg");
-  background-size: 56px;
+  background-size: 57px;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
@@ -460,9 +483,10 @@ a {
   height: 55px;
 }
 
-.burger-modal-btn-cont div button {
-  border: none;
-  outline: none;
+.burger-modal-btn-cont div button:active {
+  background-image: none;
+  background-color: #e56a38;
+  transition: background-color 000.2s;
 }
 
 .burger-modal-btn-cont div h2 {
@@ -470,6 +494,7 @@ a {
   font-weight: 300;
   width: 50px;
   text-align: center;
+  pointer-events: none;
 }
 
 .burger-modal-btn-cont button {
@@ -485,9 +510,27 @@ a {
   justify-content: center;
 }
 
+.burger-modal-btn-cont div button:hover {
+  border: none;
+  outline: none;
+}
+
 .burger-modal-btn-cont button:hover {
-  border: #efefef solid px;
+  border: #efefef solid 3px;
+  outline: none;
   transition: border 0.1s ease;
+}
+
+.burger-modal-btn-cont button:active {
+  border: #efefef solid px;
+  outline: none;
+  background-color: #efefef;
+  color: #e56a38;
+}
+
+.burger-modal-btn-cont button:focus {
+  border: #efefef solid px;
+  outline: none;
 }
 
 .menu {

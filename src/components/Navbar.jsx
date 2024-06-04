@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LogoC from "../assets/bun drop images/logo-color.png";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin, user, handleLogout }) => {
   const [clicked, setClicked] = useState("");
 
   useEffect(() => {
@@ -9,6 +9,8 @@ const Navbar = () => {
     if (storedClicked) {
       setClicked(storedClicked);
     }
+
+    console.log("log from navbar " + user);
   }, []);
 
   useEffect(() => {
@@ -40,7 +42,13 @@ const Navbar = () => {
         >
           Order
         </a>
-        <button>Login</button>
+        {!user ? (
+          <button onClick={() => setShowLogin(true)}>Login</button>
+        ) : (
+          <button className="logout" onClick={handleLogout}>
+            Log out
+          </button>
+        )}
       </div>
     </div>
   );
