@@ -243,42 +243,70 @@
   ],
   "users": [
     {
+      "id": "1",
       "username": "user",
       "password": "password",
-      "order": [
+      "orders": [
         {
-          "id": 1,
-          "quantity": 1,
-          "title": "Cheeseburger",
-          "price": 8.99,
-          "description": "A classic cheeseburger with melted American cheese, lettuce, and tomato.",
-          "category": "burgers",
-          "image": "/src/assets/bun drop images/cheeseburger2.jpg"
-        },
-        {
-          "id": 2,
-          "quantity": 5,
-          "title": "Strawberry Milkshake",
-          "price": 4.5,
-          "description": "A creamy straweberry milkshake topped with whipped cream and sprinkles.",
-          "category": "milkshakes",
-          "image": "/src/assets/bun drop images/jordgubbsmilk.jpg"
+          "orderId": 1,
+          "items": [
+            {
+              "id": 1,
+              "quantity": 1,
+              "title": "Cheeseburger",
+              "price": 8.99,
+              "description": "A classic cheeseburger with melted American cheese, lettuce, and tomato.",
+              "category": "burgers",
+              "image": "/src/assets/bun drop images/cheeseburger2.jpg"
+            },
+            {
+              "id": 2,
+              "quantity": 5,
+              "title": "Strawberry Milkshake",
+              "price": 4.5,
+              "description": "A creamy straweberry milkshake topped with whipped cream and sprinkles.",
+              "category": "milkshakes",
+              "image": "/src/assets/bun drop images/jordgubbsmilk.jpg"
+            }
+          ],
+          "isPaid": false
         }
       ],
       "favo": [
         {
-          "id": 2,
+          "itemId": 2,
           "isFavo": true
         }
       ],
-      "id": "bf7a"
-    },
-    {
-      "id": "4422",
-      "username": "lilla",
-      "password": "123",
-      "order": [],
-      "favo": []
+      "order": [
+        {
+          "id": "1",
+          "title": "BBQ Burger",
+          "price": 9.99,
+          "description": "A juicy beef burger with BBQ sauce, onions, cheddar cheese, and crispy bacon.",
+          "category": "burgers",
+          "image": "/src/assets/bun drop images/baconbbq.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "12",
+          "title": "IceCream Bomb",
+          "price": 6.99,
+          "description": "A decadent dessert with multiple scoops of ice cream and chocolate sauce.",
+          "category": "desserts",
+          "image": "/src/assets/bun drop images/glassbomb.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "13",
+          "title": "White Wine",
+          "price": 7.99,
+          "description": "A glass of crisp and refreshing white wine.",
+          "category": "beverages",
+          "image": "/src/assets/bun drop images/glasvin.jpg",
+          "quantity": 1
+        }
+      ]
     }
   ]
 }

@@ -34,7 +34,7 @@ function BurgerModal({ item, onClose, onAddToCart }) {
             onAddToCart(item, quantity), setQuantity(1);
           }}
         >
-          Add to cart
+          Add to order
         </button>
       </div>
     </div>

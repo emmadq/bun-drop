@@ -10,6 +10,8 @@ body {
   color: #444;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-x: hidden;
 }
 
@@ -508,6 +510,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
 }
 
 .burger-modal-btn-cont div button:hover {
@@ -533,5 +536,436 @@ a {
   outline: none;
 }
 
-.menu {
+.login-modal {
+  width: 400px;
+  height: 500px;
+  background-color: #ffb191;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  left: 42.5%;
+  transform: translate(0%, 0%);
+}
+
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button {
+  width: 200px;
+  border-radius: 40px;
+  background-color: #e56a38;
+  color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: 350;
+  border: transparent 3px solid;
+}
+
+.login-button:hover {
+  outline: none;
+  border: #efefef 3px solid;
+}
+
+.login-button:focus {
+  outline: none;
+  border: transparent;
+}
+
+.login-modal h1 {
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 6rem;
+  color: #e56a38;
+  margin-bottom: 30px;
+  position: relative;
+  pointer-events: none;
+}
+
+.login-close {
+  position: absolute;
+  top: 2%;
+  left: 75%;
+  background-color: transparent;
+  border: none;
+}
+
+.login-close:hover {
+  outline: none;
+  border: none;
+}
+
+.login-close img {
+  width: 60px;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input input {
+  height: 60px;
+  border-radius: 50px;
+  border: #e56a38 solid 5px;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.login-input input:focus {
+  outline: none;
+}
+
+.login-text {
+  width: 300px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dont-have {
+  pointer-events: none;
+}
+
+.login-text a {
+  text-decoration: none;
+  color: #e56a38;
+  font-weight: bold;
+  font-size: 1.06rem;
+  margin-left: 7px;
+  cursor: pointer !important;
+}
+
+.login-text a:hover {
+  color: #e56a38;
+}
+
+.login-text p {
+  margin-bottom: 20px;
+}
+
+.login-text label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-text input {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.regi-modal {
+  width: 400px;
+  height: 500px;
+  background-color: #e56a38;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  left: 42.5%;
+  transform: translate(0%, 0%);
+}
+
+.regi-modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.regi-button {
+  width: 200px;
+  border-radius: 40px;
+  background-color: #444;
+  color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: 350;
+  border: transparent 3px solid;
+}
+
+.regi-button:hover {
+  outline: none;
+  border: #efefef 3px solid;
+}
+
+.regi-button:focus {
+  outline: none;
+  border: transparent;
+}
+
+.regi-modal h1 {
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 6rem;
+  color: #444;
+  margin-bottom: 30px;
+  position: relative;
+  pointer-events: none;
+}
+
+.regi-close {
+  position: absolute;
+  top: 2%;
+  left: 75%;
+  background-color: transparent;
+  border: none;
+}
+
+.regi-close:hover {
+  outline: none;
+  border: none;
+}
+
+.regi-close img {
+  width: 60px;
+}
+
+.regi-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.regi-input input {
+  height: 50px;
+  border-radius: 50px;
+  border: #444 solid 5px;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.regi-input input:focus {
+  outline: none;
+}
+
+.regi-text {
+  width: 300px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dont-have {
+  pointer-events: none;
+}
+
+.regi-modal a {
+  text-decoration: none;
+  color: #ffb191;
+  font-weight: bold;
+  font-size: 1.06rem;
+  margin-left: 7px;
+  cursor: pointer !important;
+  margin-bottom: 5px;
+}
+
+.regi-modal a:hover {
+  color: #ffb191;
+}
+
+.regi-modal p {
+  margin-bottom: 5px;
+}
+
+.regi-modal label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.regi-text input {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.order-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.orderdisp-count {
+  width: 100vw;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-head {
+  width: 90vw;
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.order-head-left {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.order-head-left img {
+  width: 60px;
+  margin-left: 40px;
+}
+
+.order-head-left h2 {
+  margin-left: 20px;
+}
+
+.order-head-right {
+  display: flex;
+  padding: 5px;
+}
+
+.order-head-right h2 {
+  width: 150px;
+  margin: 30px;
+  text-align: center;
+}
+
+.order-head-right div {
+  width: 60px;
+  height: 60px;
+}
+
+.order-items {
+  margin-left: 40px;
+  margin-right: 40px;
+
+  display: flex;
+  flex-direction: column;
+  height: 58vh;
+  overflow-y: scroll;
+}
+
+.order-items::-webkit-scrollbar {
+  display: none;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  border-bottom: #444 solid 1px;
+}
+
+.order-item h3 {
+  width: 150px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.order-item-left {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-left h3 {
+  margin-left: 20px;
+}
+
+.order-item-left img {
+  width: 150px;
+  border-radius: 40px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.order-item-right {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-right h3 {
+  margin-right: 40px;
+}
+
+.order-item-right button {
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+  background-image: url("/src/assets/icons/trashicon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.order-item-right button:hover {
+  border: none;
+}
+
+.order-item-right button:focus {
+  border: none;
+  outline: none;
+}
+
+.order-total {
+  display: flex;
+  justify-content: end;
+  margin-top: 45px;
+  margin-right: 40px;
+}
+
+.order-total h2 {
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 4rem;
+  margin-right: 40px;
+  margin-bottom: 70px;
+}
+
+#dollar {
+  color: #e56a38;
+  margin-right: 0px;
+}
+
+.order-total button {
+  width: 200px;
+  height: 55px;
+  position: relative;
+  top: 22px;
+  background-color: #e56a38;
+  border-radius: 30px;
+  color: #efefef;
+  font-weight: 400;
+  padding: 5px;
+  font-size: 1.5rem;
 }

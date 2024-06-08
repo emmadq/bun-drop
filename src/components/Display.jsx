@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CategoryCircle from "./CategoryCircle";
 import MenyItems from "./MenyItems";
 import Searchbar from "./Seachbar";
 import BurgerModal from "./BurgerModal";
+import { setUserSession } from "../assets/helpers/auth";
 
-function Display() {
+function Display({ user }) {
   const [searchInput, setSearchInput] = useState("");
   const [catSearch, setCat] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [currentUser, setCurrentUser] = useState(user);
+
+  useEffect(() => {
+    setCurrentUser(user);
+  }, [user]);
 
   const handleInputChange = (input) => {
     setSearchInput(input);
@@ -22,7 +28,39 @@ function Display() {
   };
 
   const handleAddToCart = (item, quantity) => {
-    console.log(`Added ${quantity} of ${item.title} to cart.`);
+    const newItem = { ...item, quantity };
+
+    if (currentUser) {
+      try {
+        const updatedOrder = currentUser.order || [];
+        updatedOrder.push(newItem);
+        const updatedUser = { ...currentUser, order: updatedOrder };
+
+        const updateOptions = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedUser),
+        };
+        fetch(`http://localhost:3000/users/${currentUser.id}`, updateOptions)
+          .then((resp) => resp.json())
+          .then((data) => {
+            setUserSession(data);
+            setCurrentUser(data);
+            console.log(
+              `added ${quantity} of ${item.title} to ${data.username}s cart`
+            );
+          });
+      } catch (error) {
+        console.log(`Failed to update user data on server`);
+      }
+    } else {
+      const guestCart = JSON.parse(localStorage.getItem("guestCart")) || [];
+      guestCart.push(newItem);
+      localStorage.setItem("guestCart", JSON.stringify(guestCart));
+      console.log(`added ${quantity} of ${item.title} to guest cart!`);
+    }
   };
 
   return (

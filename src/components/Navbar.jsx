@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import LogoC from "../assets/bun drop images/logo-color.png";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ setShowLogin, user, handleLogout }) => {
-  const [clicked, setClicked] = useState("");
+  const [clicked, setClicked] = useState("menu");
 
   useEffect(() => {
     const storedClicked = localStorage.getItem("clicked");
     if (storedClicked) {
       setClicked(storedClicked);
     }
-
-    console.log("log from navbar " + user);
   }, []);
 
   useEffect(() => {
@@ -19,29 +18,29 @@ const Navbar = ({ setShowLogin, user, handleLogout }) => {
 
   return (
     <div className="Navbar-container">
-      <a
+      <Link
         onClick={() => setClicked("")}
         className="logo-cont link-cont"
-        href="/"
+        to="/"
       >
         <img src={LogoC} alt="" />
         <h2>Bun Drop</h2>
-      </a>
+      </Link>
       <div className="link-cont">
-        <a
+        <Link
           onClick={() => setClicked("menu")}
           className={clicked === "menu" ? "active" : ""}
-          href="/menu"
+          to="/"
         >
           Menu
-        </a>
-        <a
+        </Link>
+        <Link
           onClick={() => setClicked("order")}
           className={clicked === "order" ? "active" : ""}
-          href="/order"
+          to="/order"
         >
           Order
-        </a>
+        </Link>
         {!user ? (
           <button onClick={() => setShowLogin(true)}>Login</button>
         ) : (

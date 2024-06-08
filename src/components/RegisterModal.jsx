@@ -13,33 +13,58 @@ function RegisterModal({ setShowRegi, setShowLogin, onUserRegister }) {
     error,
   } = useFetch("http://localhost:3000/users");
   const [takenUser, setTakenUser] = useState("");
-
-  useEffect(() => {
-    if (users && Array.isArray(users)) {
-      const isUserTaken = users.some((u) => u.username === username);
-      setTakenUser(isUserTaken);
-    }
-  }, [users, username]);
+  const [isChecked, setIsChecked] = useState(true);
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    if (users && Array.isArray(users)) {
+      const isUserTaken = users.some((u) => u.username === username);
+      setTakenUser(isUserTaken);
+      if (isUserTaken && username !== "") {
+        alert(
+          "This username is already taken! Please choose a different username"
+        );
+      }
+    }
 
+    if (!isChecked) {
+      alert(
+        "You have to agree to our terms and conditions to be able to register!"
+      );
+    }
     const user = { username, password, order: [], favo: [] };
     const newUser = await register(user);
-    if (newUser) {
+    if (newUser && !isUserTaken && isChecked) {
       setUserSession(newUser);
       onUserRegister(newUser);
-      console.log("log from register " + user.username);
     } else {
       alert("Registration failed");
     }
   };
 
   return (
-    <div className="register-modal">
+    <div className="regi-modal">
       <h1>Register</h1>
+      <button className="regi-close" onClick={() => setShowRegi(false)}>
+        <img src="/src/assets/icons/closeXblack.svg" alt="" />
+      </button>
+      <p>
+        <span className="dont-have">Already have an account?</span>
+        <span>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setShowLogin(true);
+              setShowRegi(false);
+            }}
+            href=""
+          >
+            Sign in here!
+          </a>
+        </span>
+      </p>
       <form onSubmit={handleRegister}>
-        <div>
+        <div className="regi-input">
           <input
             type="text"
             placeholder="Username"
@@ -49,11 +74,13 @@ function RegisterModal({ setShowRegi, setShowLogin, onUserRegister }) {
                 alert("Username is taken, choose a different username!");
               }
             }}
+            required
           />
           <input
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -63,30 +90,24 @@ function RegisterModal({ setShowRegi, setShowLogin, onUserRegister }) {
                 ? setPasswordAgain(e.target.value)
                 : alert("Password does not match")
             }
+            required
           />
         </div>
-        <div>
-          <p>
-            <span>Already have an account?</span>
-            <span>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowLogin(true);
-                  setShowRegi(false);
-                }}
-                href=""
-              >
-                Sign in here!
-              </a>
-            </span>
-          </p>
+        <div className="regi-text">
           <label htmlFor="terms">
-            <input type="checkbox" id="terms" name="terms" /> I agree to the
-            terms and conditions
+            <input
+              checked={isChecked}
+              onChange={() => setIsChecked(!isChecked)}
+              type="checkbox"
+              id="terms"
+              name="terms"
+            />{" "}
+            I agree to the terms and conditions
           </label>
         </div>
-        <button type="submit">Register</button>
+        <button className="regi-button" type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

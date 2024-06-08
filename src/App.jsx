@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Meny from "./pages/Meny";
 import Order from "./pages/Order";
+import Pay from "./pages/Pay";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import RegisterModal from "./components/RegisterModal";
-import { getUserSession, clearUserSession } from "./assets/helpers/auth";
+import {
+  getUserSession,
+  setUserSession,
+  clearUserSession,
+} from "./assets/helpers/auth";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -33,6 +37,7 @@ const App = () => {
 
   const handleUserLogin = (loggedInUser) => {
     setUser(loggedInUser);
+    setUserSession(loggedInUser);
     setShowLogin(false);
     setShowRegi(false);
   };
@@ -61,9 +66,9 @@ const App = () => {
           handleLogout={handleLogout}
         ></Navbar>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/menu" element={<Meny></Meny>}></Route>
-          <Route path="/order" element={<Order></Order>}></Route>
+          <Route path="/" element={<Home user={user}></Home>}></Route>
+          <Route path="/order" element={<Order user={user}></Order>}></Route>
+          <Route path="/pay" element={<Pay user={user}></Pay>}></Route>
 
           <Route></Route>
         </Routes>
