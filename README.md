@@ -12,6 +12,8 @@ Currently, two official plugins are available:
 
 ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
 
+Clona projektet från main!
+
 För att starta appen behöver du:
 -Öppna terminalen med ctrl-ö
 -Starta json-server --watch db.json --port 3000
