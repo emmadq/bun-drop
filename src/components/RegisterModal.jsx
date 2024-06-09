@@ -17,6 +17,14 @@ function RegisterModal({ setShowRegi, setShowLogin, onUserRegister }) {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    if (!isChecked) {
+      alert(
+        "You have to agree to our terms and conditions to be able to register!"
+      );
+      return;
+    }
+
     if (users && Array.isArray(users)) {
       const isUserTaken = users.some((u) => u.username === username);
       setTakenUser(isUserTaken);
@@ -24,19 +32,18 @@ function RegisterModal({ setShowRegi, setShowLogin, onUserRegister }) {
         alert(
           "This username is already taken! Please choose a different username"
         );
+        setTakenUser(true);
+        return;
       }
     }
 
-    if (!isChecked) {
-      alert(
-        "You have to agree to our terms and conditions to be able to register!"
-      );
-    }
     const user = { username, password, order: [], favo: [] };
     const newUser = await register(user);
-    if (newUser && !isUserTaken && isChecked) {
+
+    if (newUser && takenUser === false && isChecked) {
       setUserSession(newUser);
       onUserRegister(newUser);
+      setShowRegi(false);
     } else {
       alert("Registration failed");
     }

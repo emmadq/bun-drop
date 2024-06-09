@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
-import { useActionData } from "react-router-dom";
-import { setUserSession } from "../assets/helpers/auth";
 
 function MenyItems({
   searchInput,
@@ -10,6 +8,7 @@ function MenyItems({
   addToFavo,
   removeFromFavo,
   favo,
+  user,
 }) {
   const { data, loading, error } = useFetch("http://localhost:3000/menu");
   const [sortedMenu, setSortedMenu] = useState([]);
@@ -58,19 +57,26 @@ function MenyItems({
             onClick={() => handleItemClick(m)}
           >
             <img src={m.image} alt="" />
-
-            <div
-              className="favo"
-              onClick={(e) => {
-                handleFavoClick(e, m);
-              }}
-            >
-              {isFavo(m.id) ? (
-                <img src="/src/assets/icons/star.svg" alt="" />
-              ) : (
-                <img src="/src/assets/icons/starempty.svg" alt="" />
-              )}
-            </div>
+            {user !== null ? (
+              <div
+                className="favo"
+                onClick={(e) => {
+                  handleFavoClick(e, m);
+                }}
+              >
+                {isFavo(m.id) ? (
+                  <img src="/src/assets/icons/star.svg" alt="" />
+                ) : (
+                  <img
+                    className="favo-empty"
+                    src="/src/assets/icons/starempty.svg"
+                    alt=""
+                  />
+                )}
+              </div>
+            ) : (
+              <></>
+            )}
 
             <h5>{m.title}</h5>
             <h5>${m.price}</h5>

@@ -37,7 +37,7 @@ const Navbar = ({ setShowLogin, user, handleLogout }) => {
         to="/"
       >
         <img src={LogoC} alt="" />
-        <h2>Bun Drop</h2>
+        <h2 className="logotext">Bun Drop</h2>
       </Link>
       <div className="link-cont">
         <Link

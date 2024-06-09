@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function DisplayPay({ user }) {
   const [radio, setRadio] = useState("");
   const [tel, setTel] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     if (radio === "") {
       alert("Please choose type of payment!");
     }
+
+    const form = e.target;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    navigate("/confirmation");
   }
 
   return (
@@ -119,9 +128,7 @@ function DisplayPay({ user }) {
         </div>
       </div>
       <div className="checkout">
-        <Link to="/confirmation">
-          <button type="submit">Finalize Purchase</button>
-        </Link>
+        <button type="submit">Finalize Purchase</button>
       </div>
     </form>
   );

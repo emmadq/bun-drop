@@ -278,6 +278,9 @@
         },
         {
           "itemId": "4"
+        },
+        {
+          "itemId": "15"
         }
       ],
       "order": [
@@ -353,6 +356,74 @@
         }
       ],
       "favo": []
+    },
+    {
+      "id": "f15e",
+      "username": "user2",
+      "password": "password",
+      "order": [],
+      "favo": []
+    },
+    {
+      "id": "ab0c",
+      "username": "user2",
+      "password": "password",
+      "order": [],
+      "favo": []
+    },
+    {
+      "id": "ce84",
+      "username": "user3",
+      "password": "password",
+      "order": [
+        {
+          "id": "3",
+          "title": "Cheeseburger",
+          "price": 8.99,
+          "description": "A classic cheeseburger with melted American cheese, lettuce, and tomato.",
+          "category": "burgers",
+          "image": "/src/assets/bun drop images/cheeseburger2.jpg",
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "title": "Cheeseburger",
+          "price": 8.99,
+          "description": "A classic cheeseburger with melted American cheese, lettuce, and tomato.",
+          "category": "burgers",
+          "image": "/src/assets/bun drop images/cheeseburger2.jpg",
+          "quantity": 2
+        }
+      ],
+      "favo": [
+        {
+          "itemId": "1"
+        },
+        {
+          "itemId": "2"
+        }
+      ]
+    },
+    {
+      "id": "e19b",
+      "username": "user6",
+      "password": "password",
+      "order": [],
+      "favo": []
+    },
+    {
+      "id": "9ea6",
+      "username": "emma",
+      "password": "password",
+      "order": [],
+      "favo": [
+        {
+          "itemId": "2"
+        },
+        {
+          "itemId": "15"
+        }
+      ]
     }
   ]
 }

@@ -126,6 +126,7 @@ function Display({ user }) {
         favo={favo}
         addToFavo={addToFavo}
         removeFromFavo={removeFromFavo}
+        user={currentUser}
       ></MenyItems>
       <BurgerModal
         item={selectedItem}

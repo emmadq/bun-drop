@@ -38,7 +38,17 @@ function OrderDisplay({ user }) {
 
   function handleDelete(item) {
     try {
-      const updateOrder = order.filter((orderI) => orderI.id !== item.id);
+      let updateOrder;
+      if (item.quantity > 1) {
+        updateOrder = order.map((orderI) => {
+          if (orderI.id === item.id) {
+            return { ...orderI, quantity: orderI.quantity - 1 };
+          }
+          return orderI;
+        });
+      } else {
+        updateOrder = order.filter((orderI) => orderI.id !== item.id);
+      }
 
       setOrder(updateOrder);
 
@@ -47,11 +57,6 @@ function OrderDisplay({ user }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...user, order: updateOrder }),
       };
-
-      // const deleteOption = {
-      //   method: "DELETE",
-      //   headers: { "Content-Type": "application/json" },
-      // };
 
       fetch(`http://localhost:3000/users/${user.id}`, updateOption)
         .then((resp) => resp.json())
@@ -111,12 +116,20 @@ function OrderDisplay({ user }) {
               <div className="order-item-right">
                 <h3>{i.quantity}</h3>
                 <h3>${i.price}</h3>
-                <button onClick={() => handleDelete(i)}></button>
+                <button
+                  onClick={() => {
+                    if (currentUser) {
+                      handleDelete(i);
+                    } else {
+                      handleDeleteNouser(i);
+                    }
+                  }}
+                ></button>
               </div>
             </div>
           ))
         ) : (
-          <h2>No items to order!</h2>
+          <h2>No items selected!</h2>
         )}
       </div>
       <div className="order-total">
