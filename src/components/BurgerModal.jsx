@@ -31,7 +31,9 @@ function BurgerModal({ item, onClose, onAddToCart }) {
 
         <button
           onClick={() => {
-            onAddToCart(item, quantity), setQuantity(1);
+            onAddToCart(item, quantity),
+              setQuantity(1),
+              setTimeout(onClose, 200);
           }}
         >
           Add to order

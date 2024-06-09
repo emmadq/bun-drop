@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 import Pay from "./pages/Pay";
+import Confirmation from "./pages/Confirmation";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
@@ -69,6 +70,10 @@ const App = () => {
           <Route path="/" element={<Home user={user}></Home>}></Route>
           <Route path="/order" element={<Order user={user}></Order>}></Route>
           <Route path="/pay" element={<Pay user={user}></Pay>}></Route>
+          <Route
+            path="/confirmation"
+            element={<Confirmation user={user}></Confirmation>}
+          ></Route>
 
           <Route></Route>
         </Routes>

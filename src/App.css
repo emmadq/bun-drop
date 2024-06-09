@@ -10,7 +10,7 @@ body {
   color: #444;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
 }
@@ -810,14 +810,14 @@ a {
   cursor: pointer;
 }
 
-.order-count {
+.order-cont {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   justify-content: center;
 }
 
-.orderdisp-count {
+.orderdisp-cont {
   width: 100vw;
   max-width: 1920px;
   display: flex;
@@ -828,6 +828,7 @@ a {
 
 .order-head {
   width: 90vw;
+  max-width: 1720px;
   font-family: "Just Me Again Down Here", cursive;
   font-size: 2rem;
   display: flex;
@@ -843,7 +844,6 @@ a {
 
 .order-head-left img {
   width: 60px;
-  margin-left: 40px;
 }
 
 .order-head-left h2 {
@@ -867,6 +867,8 @@ a {
 }
 
 .order-items {
+  width: 90vw;
+  max-width: 1720px;
   margin-left: 40px;
   margin-right: 40px;
 
@@ -939,10 +941,11 @@ a {
 }
 
 .order-total {
+  width: 90vw;
+  max-width: 1720px;
   display: flex;
   justify-content: end;
   margin-top: 45px;
-  margin-right: 40px;
 }
 
 .order-total h2 {
@@ -968,4 +971,204 @@ a {
   font-weight: 400;
   padding: 5px;
   font-size: 1.5rem;
+  border: none;
+}
+
+.order-total button:hover {
+  background-color: #ffb191;
+  color: #e56a38;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn-disabled {
+  opacity: 0.4;
+}
+
+.pay-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.displaypay-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.displaypay-cont h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.displaypay-delivery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+}
+.displaypay-delivery div {
+  display: flex;
+}
+
+.displaypay-delivery input {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: none;
+  font-size: 1.3rem;
+}
+
+.city {
+  border-bottom: 1px solid #444;
+}
+
+.lastname {
+  border-left: none;
+}
+
+.displaypay-delivery input {
+  height: 50px;
+  width: 100%;
+}
+.displaypay-delivery2 {
+  display: flex;
+}
+
+.displaypay-payment {
+  width: 20vw;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.displaypay-payment label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+.displaypay-payment input[type="radio"] {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.displaypay-payment img {
+  width: 50px;
+  margin-left: 160px;
+}
+
+.displaypay-payment label:first-of-type img {
+  width: 150px;
+  margin-left: 70px;
+}
+
+.payment-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.checkout button {
+  width: 300px;
+  height: 60px;
+  background-color: #e56a38;
+  color: #efefef;
+  font-size: 1.3rem;
+  padding: 5px;
+}
+
+.checkout button:hover {
+  outline: none;
+  border: transparent;
+  background-color: #ffb191;
+  color: #e56a38;
+}
+
+.checkout button:active {
+  outline: none;
+}
+
+.cardinput {
+  align-self: start;
+  width: 150%;
+  border: rgb(68, 68, 68, 0.5) 4px solid;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cardinput input {
+  width: 90%;
+  height: 40px;
+  padding: 5px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+}
+
+.cardinput input:focus {
+  border: none;
+  outline: none;
+}
+
+.cardinput p {
+  margin-left: 25px;
+  font-weight: 300;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.cardinput-first {
+  align-self: center;
+  width: 108%;
+  border-bottom: rgb(68, 68, 68, 0.5) 3px solid;
+}
+
+.cardinput2 {
+  align-self: center;
+  width: 108%;
+
+  display: flex;
+}
+
+.cardinput-second {
+  align-self: center;
+  width: 108%;
+  margin-top: 10px;
+}
+
+.cardborderright {
+  align-self: center;
+  width: 108%;
+  border-right: rgb(68, 68, 68, 0.5) 3px solid;
+  margin-top: 10px;
 }

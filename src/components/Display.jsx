@@ -10,9 +10,11 @@ function Display({ user }) {
   const [catSearch, setCat] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentUser, setCurrentUser] = useState(user);
+  const [favo, setFavo] = useState(user ? user.favo : []);
 
   useEffect(() => {
     setCurrentUser(user);
+    setFavo(user ? user.favo : []);
   }, [user]);
 
   const handleInputChange = (input) => {
@@ -25,6 +27,47 @@ function Display({ user }) {
 
   const handleCloseModal = () => {
     setSelectedItem(null);
+  };
+
+  const addToFavo = (itemId) => {
+    const updatedFavo = [...favo, { itemId }];
+    setFavo(updatedFavo);
+    updateUserFavo(updatedFavo);
+  };
+
+  const removeFromFavo = (itemId) => {
+    const updatedFavorites = favo.filter((favo) => favo.itemId !== itemId);
+    setFavo(updatedFavorites);
+    updateUserFavo(updatedFavorites);
+  };
+
+  const updateUserFavo = (updatedFavorites) => {
+    if (user) {
+      const updateUser = {
+        ...user,
+        favo: updatedFavorites,
+      };
+
+      const updateOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateUser),
+      };
+
+      fetch(`http://localhost:3000/users/${user.id}`, updateOptions)
+        .then((resp) => resp.json())
+        .then((data) => {
+          setUserSession(data);
+          console.log("User favorites updated:", data.favo);
+        })
+        .catch((error) => {
+          console.error("Failed to update user favorites:", error);
+          // Återställ till tidigare favoriter vid fel
+          setFavorites(user.favo);
+        });
+    }
   };
 
   const handleAddToCart = (item, quantity) => {
@@ -80,6 +123,9 @@ function Display({ user }) {
         searchInput={searchInput}
         cat={catSearch}
         setSelectedItem={handleSelectedItem}
+        favo={favo}
+        addToFavo={addToFavo}
+        removeFromFavo={removeFromFavo}
       ></MenyItems>
       <BurgerModal
         item={selectedItem}

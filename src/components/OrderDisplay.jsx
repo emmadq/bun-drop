@@ -7,6 +7,7 @@ function OrderDisplay({ user }) {
   const [order, setOrder] = useState([]);
   const [currentUser, setCurrentUser] = useState(user);
 
+  console.log(order);
   useEffect(() => {
     if (user) {
       setOrder(user.order);
@@ -16,6 +17,14 @@ function OrderDisplay({ user }) {
       );
       setTotalprice(total);
       console.log(user);
+    } else {
+      const guestCart = JSON.parse(localStorage.getItem("guestCart")) || [];
+      setOrder(guestCart);
+      const total = guestCart.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+      setTotalprice(total);
     }
   }, [user]);
 
@@ -56,6 +65,26 @@ function OrderDisplay({ user }) {
     }
   }
 
+  function handleDeleteNouser(item) {
+    try {
+      if (item.quantity > 1) {
+        const updateOrder = order.map((orderI) => {
+          if (orderI.id === item.id) {
+            return { ...orderI, quantity: orderI.quantity - 1 };
+          }
+          return orderI;
+        });
+
+        setOrder(updateOrder);
+        localStorage.setItem("guestCart", JSON.stringify(updateOrder));
+      } else {
+        const updateOrder = order.filter((orderI) => orderI.id !== item.id);
+        setOrder(updateOrder);
+        localStorage.setItem("guestCart", JSON.stringify(updateOrder));
+      }
+    } catch (error) {}
+  }
+
   return (
     <div className="orderdisp-cont">
       <div className="order-head">
@@ -72,28 +101,35 @@ function OrderDisplay({ user }) {
       <hr />
 
       <div className="order-items">
-        {user
-          ? order.map((i) => (
-              <div key={i} className="order-item">
-                <div className="order-item-left">
-                  <img src={i.image}></img>
-                  <h3>{i.title}</h3>
-                </div>
-                <div className="order-item-right">
-                  <h3>{i.quantity}</h3>
-                  <h3>${i.price}</h3>
-                  <button onClick={() => handleDelete(i)}></button>
-                </div>
+        {order.length > 0 ? (
+          order.map((i) => (
+            <div key={i} className="order-item">
+              <div className="order-item-left">
+                <img src={i.image}></img>
+                <h3>{i.title}</h3>
               </div>
-            ))
-          : console.log("No user " + user)}
+              <div className="order-item-right">
+                <h3>{i.quantity}</h3>
+                <h3>${i.price}</h3>
+                <button onClick={() => handleDelete(i)}></button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <h2>No items to order!</h2>
+        )}
       </div>
       <div className="order-total">
         <h2>Total:</h2>
         <h2 id="dollar">$</h2>
         <h2>{totalprice.toFixed(2)}</h2>
         <Link to="/pay">
-          <button>Pay</button>
+          <button
+            className={totalprice < 1 ? "order-btn-disabled" : ""}
+            disabled={totalprice < 1}
+          >
+            Pay
+          </button>
         </Link>
       </div>
     </div>

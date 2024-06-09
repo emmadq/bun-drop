@@ -274,8 +274,10 @@
       ],
       "favo": [
         {
-          "itemId": 2,
-          "isFavo": true
+          "itemId": "2"
+        },
+        {
+          "itemId": "4"
         }
       ],
       "order": [
@@ -305,8 +307,52 @@
           "category": "beverages",
           "image": "/src/assets/bun drop images/glasvin.jpg",
           "quantity": 1
+        },
+        {
+          "id": "11",
+          "title": "Fruit Cocktail Dessert",
+          "price": 5.99,
+          "description": "A refreshing fruit cocktail with a variety of fresh fruits.",
+          "category": "desserts",
+          "image": "/src/assets/bun drop images/fruktdesert.jpg",
+          "quantity": 1
         }
       ]
+    },
+    {
+      "id": "82e1",
+      "username": "sanne",
+      "password": "kalle",
+      "order": [
+        {
+          "id": "19",
+          "title": "Luxurious Fries",
+          "price": 5.99,
+          "description": "Fries topped with truffle oil, parmesan, and herbs.",
+          "category": "sides",
+          "image": "/src/assets/bun drop images/pommesbox.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "14",
+          "title": "Chocolate Milkshake",
+          "price": 4.5,
+          "description": "A rich chocolate milkshake topped with whipped cream.",
+          "category": "milkshakes",
+          "image": "/src/assets/bun drop images/milkchocklad.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "title": "Rainbow Pancakes",
+          "price": 8.99,
+          "description": "Stack of colorful pancakes served with syrup and whipped cream.",
+          "category": "desserts",
+          "image": "/src/assets/bun drop images/pannkakscake.jpg",
+          "quantity": 1
+        }
+      ],
+      "favo": []
     }
   ]
 }

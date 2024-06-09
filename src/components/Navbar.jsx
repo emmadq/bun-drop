@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LogoC from "../assets/bun drop images/logo-color.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ setShowLogin, user, handleLogout }) => {
   const [clicked, setClicked] = useState("menu");
+  const location = useLocation();
 
   useEffect(() => {
     const storedClicked = localStorage.getItem("clicked");
@@ -15,6 +16,18 @@ const Navbar = ({ setShowLogin, user, handleLogout }) => {
   useEffect(() => {
     localStorage.setItem("clicked", clicked);
   }, [clicked]);
+
+  useEffect(() => {
+    if (location.pathname === "/pay" || location.pathname === "/confirmation") {
+      setClicked("");
+    }
+    if (location.pathname === "/") {
+      setClicked("menu");
+    }
+    if (location.pathname === "/order") {
+      setClicked("order");
+    }
+  }, [location]);
 
   return (
     <div className="Navbar-container">
