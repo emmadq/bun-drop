@@ -2250,15 +2250,12 @@ a {
   }
 
   .displaypay-delivery input {
-    display: flex;
-    flex-direction: row;
     padding: 10px;
-    border-bottom: none;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    border: #444 2px solid;
   }
 
   .city {
-    border-bottom: 1px solid #444;
   }
 
   .lastname {
@@ -2269,6 +2266,7 @@ a {
     height: 50px;
     width: 100%;
   }
+
   .displaypay-delivery2 {
     display: flex;
   }
