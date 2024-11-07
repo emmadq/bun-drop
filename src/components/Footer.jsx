@@ -19,13 +19,10 @@ function Footer() {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="/menu">Menu</a>
               </li>
               <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
+                <a href="/order">Order</a>
               </li>
             </ul>
           </div>
@@ -50,7 +47,13 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="footer-bottom">2024 BunDrop. All rights reserved.</div>
+        <div className="footer-bottom">
+          <p>
+            2024 BunDrop. No rights reserved. AI generated material made with
+            Adobe Firefly
+          </p>
+          <br />
+        </div>
       </div>
     </div>
   );

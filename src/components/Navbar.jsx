@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LogoC from "../assets/bun drop images/logo-color.png";
+import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
-  const [clicked, setClicked] = useState("");
+const Navbar = ({ setShowLogin, user, handleLogout }) => {
+  const [clicked, setClicked] = useState("menu");
+  const location = useLocation();
 
   useEffect(() => {
     const storedClicked = localStorage.getItem("clicked");
@@ -15,32 +17,50 @@ const Navbar = () => {
     localStorage.setItem("clicked", clicked);
   }, [clicked]);
 
+  useEffect(() => {
+    if (location.pathname === "/pay" || location.pathname === "/confirmation") {
+      setClicked("");
+    }
+    if (location.pathname === "/") {
+      setClicked("menu");
+    }
+    if (location.pathname === "/order") {
+      setClicked("order");
+    }
+  }, [location]);
+
   return (
     <div className="Navbar-container">
-      <a
+      <Link
         onClick={() => setClicked("")}
         className="logo-cont link-cont"
-        href="/"
+        to="/"
       >
         <img src={LogoC} alt="" />
-        <h2>Bun Drop</h2>
-      </a>
+        <h2 className="logotext">Bun Drop</h2>
+      </Link>
       <div className="link-cont">
-        <a
+        <Link
           onClick={() => setClicked("menu")}
           className={clicked === "menu" ? "active" : ""}
-          href="/menu"
+          to="/"
         >
           Menu
-        </a>
-        <a
+        </Link>
+        <Link
           onClick={() => setClicked("order")}
           className={clicked === "order" ? "active" : ""}
-          href="/order"
+          to="/order"
         >
           Order
-        </a>
-        <button>Login</button>
+        </Link>
+        {!user ? (
+          <button onClick={() => setShowLogin(true)}>Login</button>
+        ) : (
+          <button className="logout" onClick={handleLogout}>
+            Log out
+          </button>
+        )}
       </div>
     </div>
   );

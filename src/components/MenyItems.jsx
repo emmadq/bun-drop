@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
-function MenyItems({ searchInput, cat, setSelectedItem }) {
+function MenyItems({
+  searchInput,
+  cat,
+  setSelectedItem,
+  addToFavo,
+  removeFromFavo,
+  favo,
+  user,
+}) {
   const { data, loading, error } = useFetch("http://localhost:3000/menu");
   const [sortedMenu, setSortedMenu] = useState([]);
 
@@ -19,8 +27,21 @@ function MenyItems({ searchInput, cat, setSelectedItem }) {
     }
   }, [searchInput, cat, data]);
 
+  const isFavo = (itemId) => {
+    return favo.some((f) => f.itemId === itemId);
+  };
+
   const handleItemClick = (item) => {
     setSelectedItem(item);
+  };
+
+  const handleFavoClick = (e, item) => {
+    e.stopPropagation();
+    if (isFavo(item.id)) {
+      removeFromFavo(item.id);
+    } else {
+      addToFavo(item.id);
+    }
   };
 
   if (loading) return <div>Loading...</div>;
@@ -36,6 +57,27 @@ function MenyItems({ searchInput, cat, setSelectedItem }) {
             onClick={() => handleItemClick(m)}
           >
             <img src={m.image} alt="" />
+            {user !== null ? (
+              <div
+                className="favo"
+                onClick={(e) => {
+                  handleFavoClick(e, m);
+                }}
+              >
+                {isFavo(m.id) ? (
+                  <img src="/src/assets/icons/star.svg" alt="" />
+                ) : (
+                  <img
+                    className="favo-empty"
+                    src="/src/assets/icons/starempty.svg"
+                    alt=""
+                  />
+                )}
+              </div>
+            ) : (
+              <></>
+            )}
+
             <h5>{m.title}</h5>
             <h5>${m.price}</h5>
           </div>

@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import OrderDisplay from "../components/OrderDisplay";
 
-function Order() {
+function Order({ user }) {
+  console.log("log from orderpage " + user);
   return (
-    <>
-      <Navbar></Navbar>
-      <h1>Orderpage!</h1>
-    </>
+    <div className="order-cont">
+      <OrderDisplay user={user}></OrderDisplay>
+    </div>
   );
 }
 
